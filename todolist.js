@@ -24,7 +24,7 @@ document.addEventListener("keypress", function(event) {
   }
 });
 function deleteAll(){
-  document.getElementById('list').innerHTML = "";
+  document.getElementById('list').innerHTML = "hello";
 }
 function showArchive(){
   const list = document.querySelectorAll("LI");
