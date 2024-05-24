@@ -20,11 +20,11 @@ addBtn.addEventListener("click", () => addItem());
 document.addEventListener("keypress", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
-    document.getElementById("add").click();
+    addBtn.click();
   }
 });
 function deleteAll(){
-  document.getElementById('list').innerHTML = "hello";
+  document.getElementById('list').innerHTML = "";
 }
 function showArchive(){
   const list = document.querySelectorAll("LI");
