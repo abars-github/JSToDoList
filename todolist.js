@@ -24,29 +24,34 @@ document.addEventListener("keypress", function(event) {
   }
 });
 function deleteAll(){
+  if(document.getElementById("archiveplace").style.visibility === "visible")
+    {
+      document.getElementById('archivelist').innerHTML = "";
+    }
   document.getElementById('list').innerHTML = "";
 }
 function showArchive(){
-  const list = document.querySelectorAll("LI");
-  for (let i = 0; i < list.length; i++) {
-      const computers = list[i].innerHTML;
-      let all = computers.toString();
-      document.getElementById("list").innerHTML = all;
-  }
+  document.getElementById("archiveplace").style.visibility = "visible";
 }
 function archiveItems(){
-  document.getElementById('list').innerHTML = '<i class="fa fa-archive" aria-hidden="true"></i>';
+  document.getElementById("archiveplace").style.visibility = "hidden";
+  let ul = document.getElementById("archivelist"); 
+  let checked = document.querySelector("li.checked");
+  for(let i = 0; i <= checked.value; i++){
+    ul.appendChild(checked);
+  }
+  document.getElementById("list").innerHTML = "";
 }
 function addItem(){
   let li= document.createElement('li');
   let newItem= document.getElementById('todolist').value;
   let x = document.createTextNode(newItem);
   li.appendChild(x);
-
   if(newItem == ''){
       alert('You have to write something');
   }else{
-      document.getElementById('list').appendChild(li)
+      document.getElementById('list').appendChild(li);
+      document.getElementById("todolist").value = "";
   }
 
 let myNodelist = document.getElementsByTagName("LI");
@@ -73,5 +78,3 @@ list.addEventListener('click', function(ev) {
     ev.target.classList.toggle('checked');
   }
 }, false);
-
-
