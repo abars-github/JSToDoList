@@ -23,6 +23,9 @@ document.addEventListener("keypress", function(event) {
     addBtn.click();
   }
 });
+function hideArchive(){
+  document.getElementById("archiveplace").style.visibility = "hidden";
+}
 function deleteAll(){
   if(document.getElementById("archiveplace").style.visibility === "visible")
     {
@@ -32,19 +35,25 @@ function deleteAll(){
 }
 function showArchive(){
   document.getElementById("archiveplace").style.visibility = "visible";
+  // if(document.getElementById("archiveplace").style.visibility === "visible"){
+  //   const hideArchiveBtn = document.getElementById("showarchive");
+  //   hideArchiveBtn.innerText = "Hide Archive";
+  //   hideArchiveBtn.addEventListener("click", () => hideArchive());
+  // }
 }
 function archiveItems(){
   document.getElementById("archiveplace").style.visibility = "hidden";
   let ul = document.getElementById("archivelist"); 
-  let checked = document.querySelector("li.checked");
-  for(let i = 0; i <= checked.value; i++){
-    ul.appendChild(checked);
-  }
-  document.getElementById("list").innerHTML = "";
+  let checkedLisArr = document.querySelectorAll("li.checked");
+  // console.log(checkedLisArr, checkedLisArr.length, checkedLisArr[0]);
+  checkedLisArr.forEach((element) => {
+    ul.appendChild(element); 
+  });
+  document.querySelectorAll("li.checked").innerHTML = "";
 }
 function addItem(){
-  let li= document.createElement('li');
-  let newItem= document.getElementById('todolist').value;
+  let li = document.createElement('li');
+  let newItem = document.getElementById('todolist').value;
   let x = document.createTextNode(newItem);
   li.appendChild(x);
   if(newItem == ''){
