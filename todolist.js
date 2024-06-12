@@ -8,7 +8,6 @@
 // archive button makes all available lists to archive 
 // when show archive we must see the lists in archive
 
-
 const deleteAllBtn = document.getElementById("delete");
 const showArchiveBtn = document.getElementById("showarchive");
 const archiveBtn = document.getElementById("archive");
@@ -35,17 +34,11 @@ function deleteAll(){
 }
 function showArchive(){
   document.getElementById("archiveplace").style.visibility = "visible";
-  // if(document.getElementById("archiveplace").style.visibility === "visible"){
-  //   const hideArchiveBtn = document.getElementById("showarchive");
-  //   hideArchiveBtn.innerText = "Hide Archive";
-  //   hideArchiveBtn.addEventListener("click", () => hideArchive());
-  // }
 }
 function archiveItems(){
   document.getElementById("archiveplace").style.visibility = "hidden";
   let ul = document.getElementById("archivelist"); 
   let checkedLisArr = document.querySelectorAll("li.checked");
-  // console.log(checkedLisArr, checkedLisArr.length, checkedLisArr[0]);
   checkedLisArr.forEach((element) => {
     ul.appendChild(element); 
   });
