@@ -55,7 +55,7 @@ ul li.checked::before {
     color: white;
 }
 #head {
-    background-color: rgb(116, 114, 116);
+    background-color: rgb(1, 40, 139);
     padding: 30px 40px;
     color: white;
     text-align: center;
@@ -71,7 +71,7 @@ input[type=text]:focus {
     background-color: lightblue;
 }
 body{
-    background-image: url("todolist.jpg");
+    background-image: url("background.jpg");
 }
 #add{
     background-color: #4062d3; /* Green */
